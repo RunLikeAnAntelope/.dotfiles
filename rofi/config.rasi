@@ -1,6 +1,8 @@
 configuration {
   modes: [ combi ];
   combi-modes: [ window, drun, run ];
+  /* Laptop Font and sixe */
+  font: "DejaVu Sans Mono 20";
 }
 
 @theme "gruvbox-dark"
@@ -9,3 +11,4 @@ element {
   children: [element-icon,element-text ];
   spacing: 5px;
 }
+
