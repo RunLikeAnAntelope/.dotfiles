@@ -8,3 +8,20 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1 # decrease screen 
 
 #make zsh default
 chsh -s $(which zsh)
+
+#install zsh 
+sudo nala install zsh
+
+#install tmux
+sudo nala install tmux
+
+#install neovim
+sudo nala install neovim
+
+#install oh my zsh 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#install rofi
+sudo nala install rofi
+
+
