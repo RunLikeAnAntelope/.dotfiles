@@ -1,0 +1,24 @@
+# Systemctl to run kmonad on startup
+# copy to /etc/systemd/system
+
+# Run following commands
+#     sudo systemctl daemon-reload
+#     sudo systemctl start keyboard_mylaptop
+#     sudo systemctl enable keyboard_mylaptop
+#     sudo systemctl status keyboard_mylaptop
+
+# Change User and Group and ExecStart to Match
+
+[Unit]
+Description=mylaptop keyboard kmonad
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/nevin/.local/bin/kmonad /home/nevin/.config/kmonad/keymap.kbd
+Restart=always
+User=nevin
+Group=nevin
+
+[Install]
+WantedBy=multi-user.target
