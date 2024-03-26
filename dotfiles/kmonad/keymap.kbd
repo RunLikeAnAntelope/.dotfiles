@@ -1,0 +1,26 @@
+(defcfg
+        input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+        output (uinput-sink "My KMonad output")
+        fallthrough true
+        )
+
+(defsrc 
+        a s d f g h j k l ;
+)
+
+(defalias
+
+    sft_a (tap-hold-next-release 200 a lsft)
+    alt_s (tap-hold-next-release 200 s lalt)
+    ctl_d (tap-hold-next-release 200 d lctl)
+    met_f (tap-hold-next-release 200 f lmet)
+
+    met_j (tap-hold-next-release 200 j rmet)
+    ctl_k (tap-hold-next-release 200 k rctl)
+    alt_l (tap-hold-next-release 200 l lalt)
+    sft_; (tap-hold-next-release 200 ; rsft)
+)
+
+(deflayer homerowmods
+    @sft_a   @alt_s   @ctl_d   @met_f   g   h   @met_j   @ctl_k   @alt_l   @sft_;
+)
